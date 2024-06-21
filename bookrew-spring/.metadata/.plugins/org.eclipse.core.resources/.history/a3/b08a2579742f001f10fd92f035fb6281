@@ -1,0 +1,5 @@
+package com.bookrew.domain;
+
+public class Book {
+
+}

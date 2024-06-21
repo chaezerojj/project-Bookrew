@@ -1,0 +1,5 @@
+package com.bookrew.web;
+
+public class BookrewController {
+
+}
