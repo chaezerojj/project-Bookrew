@@ -1,0 +1,28 @@
+package com.bookrew;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class MainController {
+	
+	// CORS 설정
+	@CrossOrigin(origins = "http://localhost:3000")
+	@GetMapping("/api/main")
+	@ResponseBody
+	public List<String> main() {
+		return Arrays.asList("Spring boot", "/api/main 출력");
+	}
+	
+	@GetMapping("/root")
+	public String root() {
+		// 메인으로 돌아감
+		return "Bookrew root";
+	}
+	
+}

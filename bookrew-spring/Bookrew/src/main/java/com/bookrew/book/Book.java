@@ -15,8 +15,8 @@ import lombok.Setter;
 @Entity
 public class Book {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer id;
-	
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long id;
+	private String title, author, publisher, category;
 	
 }

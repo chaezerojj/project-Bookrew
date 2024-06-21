@@ -1,15 +1,24 @@
 package com.bookrew;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import java.util.Arrays;
+import java.util.List;
 
-@Controller
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
 public class MainController {
 	
-	@GetMapping("/")
+	@GetMapping("/api/bookrew")
+	@ResponseBody
+	public List<String> main() {
+		return Arrays.asList("main페이지 입니다.", "/api/main 출력");
+	}
+	
+	@GetMapping("/root")
 	public String root() {
-		// 메인으로 돌아감
-		return "redirect:/bookrew";
+		return "Bookrew root";
 	}
 	
 }
