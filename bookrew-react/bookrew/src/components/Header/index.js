@@ -5,7 +5,6 @@ import * as S from './index.Style';
 
 export default function Index() {
 
-
   return (
     <S.Header>
       <S.Wrapper>
@@ -17,7 +16,7 @@ export default function Index() {
             <Link to = "/bookrew/booklist">책 목록</Link>
           </S.Booklist>
           <S.Board>
-            <Link to="bookrew/board">Board</Link>
+            <Link to="bookrew/bookboard">Board</Link>
           </S.Board>
         </S.Nav>
       </S.Wrapper>

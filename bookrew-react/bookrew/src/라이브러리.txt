@@ -9,3 +9,6 @@ npm install react-spinners --save
 
 - style components
 npm install style-components
+
+- axios
+npm install axios
