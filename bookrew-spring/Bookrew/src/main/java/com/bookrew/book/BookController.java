@@ -15,13 +15,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/bookrew/books")
+@RequestMapping("/api/bookrew/booklist")
 public class BookController {
 	
 	@Autowired
 	private BookService bookService;
 	
-	@GetMapping(value = "/list")
+	@GetMapping
 	// ResponseEntity 
 	// - HTTP 응답을 나타내는 객체
 	// - REST API를 통해 프론트엔드와 데이터를 교환할때,

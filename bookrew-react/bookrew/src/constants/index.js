@@ -1,2 +1,1 @@
-// 애플리케이션 전반에 사용되는 상수 저장
-// 예) 색상코드, 설정값 등
+export const SERVER_URL = "http://localhost:8080";

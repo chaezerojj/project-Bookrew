@@ -1,0 +1,11 @@
+- 리액트 라우터
+npm install react-router-dom
+
+- mui
+npm install @mui/x-data-grid @mui/material @emotion/react @emotion/styled
+
+- 로딩
+npm install react-spinners --save
+
+- style components
+npm install style-components

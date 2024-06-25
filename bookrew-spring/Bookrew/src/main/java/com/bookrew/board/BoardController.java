@@ -29,7 +29,7 @@ public class BoardController {
 	}
 	
 	// 입력받은 글을 db에 저장
-	@PostMapping(value = "/create")
+	@PostMapping
 	public ResponseEntity<Board> createBoard(@RequestBody Board board) {
 		Board newBoard = boardService.createBoard(board);
 		return ResponseEntity.status(HttpStatus.CREATED).body(newBoard);

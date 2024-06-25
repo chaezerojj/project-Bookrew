@@ -1,20 +1,37 @@
 import './App.css';
-import {useEffect, useState} from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/home';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Booklist from './pages/booklist/Booklist';
+import Board from './pages/board/Board';
+import BoardDetail from './components/Board/BoardDetail';
+import BoardForm from './components/Board/BoardForm';
 
 function App() {
-  const [app, setApp] = useState([]);
-  useEffect(() => {
-    fetch("/api/bookrew")
-      .then((res) => {return res.json()})
-      .then((data) => {setApp(data)})
-  }, [])
+  // const [app, setApp] = useState([]);
+  // useEffect(() => {
+  //   fetch("/api/bookrew")
+  //     .then((res) => {return res.json()})
+  //     .then((data) => {setApp(data)})
+  // }, [])
   return (
-    <div className="App">
-      <h2>Bookrew - react</h2>
-      <ul>
-        {app.map((content, index) => <li key={`${index} - ${content}`}>{content}</li>)}
-      </ul>
-    </div>
+    <>
+
+      <Router>
+        {/* 헤더 네비바 */}
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/bookrew/booklist" element={<Booklist />} />
+          <Route path="/bookrew/board" element={<Board />} />
+          <Route path="/bookrew/board/:id" element={<BoardDetail />} />
+          <Route path="/bookrew/board/create" element={<BoardForm />} />
+        </Routes>
+        <Footer />
+      </Router>
+
+    </>
   );
 }
 
