@@ -2,7 +2,7 @@
 npm install react-router-dom
 
 - mui
-npm install @mui/x-data-grid @mui/material @emotion/react @emotion/styled
+npm install @mui/icons-material @mui/material @emotion/styled @emotion/react
 
 - 로딩
 npm install react-spinners --save
@@ -12,3 +12,6 @@ npm install style-components
 
 - axios
 npm install axios
+
+- animation
+npm install framer-motion

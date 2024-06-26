@@ -1,9 +1,14 @@
 // bookcard - 책 설명 카드 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { SERVER_URL } from '../../constants';
+import { motion, useScroll } from "framer-motion";
+import * as S from './BookCard.Style';
 
 function BookCard() {
   const [books, setBooks] = useState([]);
+  const ref = useRef(null);
+
+  const { scrollXProgress } = useScroll({ container: ref });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -34,6 +39,19 @@ function BookCard() {
           </li>
         ))}
       </ul>
+      <S.Ul ref={ref}>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </S.Ul>
     </div>
   )
 }

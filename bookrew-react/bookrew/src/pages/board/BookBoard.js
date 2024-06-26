@@ -49,11 +49,19 @@ function BookBoard() {
           </S.TabWrapper>
         </S.Tab>
         <S.TitleWrapper>
-          <S.TextTitle>책 게시판</S.TextTitle>
+          <S.TextTitle>📖 책 게시판 📖</S.TextTitle>
         </S.TitleWrapper>
         <S.BoardWrapper>
 
+
           <S.BoardBox> {/* BoardBox */}
+            <S.ButtonWrapper>
+              <Link to="/bookrew/bookboard/create">
+                <S.Button>
+                  📝글쓰기
+                </S.Button>
+              </Link>
+            </S.ButtonWrapper>
             <S.Table>
               <S.Thead>
                 <tr>
@@ -74,13 +82,6 @@ function BookBoard() {
             </S.Table>
           </S.BoardBox>
 
-          <S.ButtonWrapper>
-            <Link to="/bookrew/bookboard/create">
-              <S.Button>
-                📝글쓰기
-              </S.Button>
-            </Link>
-          </S.ButtonWrapper>
 
         </S.BoardWrapper>
 

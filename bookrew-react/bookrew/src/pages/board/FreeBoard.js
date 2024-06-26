@@ -34,6 +34,7 @@ function FreeBoard() {
   return (
     <>
       <S.Board>
+
         <S.Tab>
           <S.TabWrapper>
             <S.FreeBoardTab>
@@ -48,12 +49,20 @@ function FreeBoard() {
             </S.BookBoardTab>
           </S.TabWrapper>
         </S.Tab>
-        <S.TitleWrapper>
-          <S.TextTitle>자유 게시판</S.TextTitle>
-        </S.TitleWrapper>
-        <S.BoardWrapper>
 
+        <S.TitleWrapper>
+          <S.TextTitle>💬 자유 게시판 💬</S.TextTitle>
+        </S.TitleWrapper>
+
+        <S.BoardWrapper>
           <S.BoardBox> {/* BoardBox */}
+            <S.ButtonWrapper>
+              <Link to="/bookrew/freeboard/create">
+                <S.Button>
+                  📝글쓰기
+                </S.Button>
+              </Link>
+            </S.ButtonWrapper>
             <S.Table>
               <S.Thead>
                 <tr>
@@ -73,15 +82,6 @@ function FreeBoard() {
               </S.Tbody>
             </S.Table>
           </S.BoardBox>
-
-          <S.ButtonWrapper>
-            <Link to="/bookrew/freeboard/create">
-              <S.Button>
-                📝글쓰기
-              </S.Button>
-            </Link>
-          </S.ButtonWrapper>
-
         </S.BoardWrapper>
 
       </S.Board>

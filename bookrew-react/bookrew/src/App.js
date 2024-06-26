@@ -14,12 +14,6 @@ import FreeBoardForm from './components/Board/FreeBoardForm';
 import BookBoardForm from './components/Board/BookBoardForm';
 
 function App() {
-  // const [app, setApp] = useState([]);
-  // useEffect(() => {
-  //   fetch("/api/bookrew")
-  //     .then((res) => {return res.json()})
-  //     .then((data) => {setApp(data)})
-  // }, [])
   return (
     <>
 

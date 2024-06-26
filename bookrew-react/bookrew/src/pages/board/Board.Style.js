@@ -2,67 +2,65 @@ import { styled } from 'styled-components';
 
 export const Board = styled.div`
   width: 100%;
-  padding: 30px;
-  margin: 20px;
-`;
-
-export const BoardWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  padding: 30px;
-  min-width: 500px;
-  max-width: 1000px;
-`;
+  padding: 40px;
+  margin: 40px;
+  `;
+  
 
 export const Tab = styled.div`
   margin: 0 auto;
   padding: 0;
-  width: 100%;
+  width: 850px;
 `;
-
+  
 export const TabWrapper = styled.div`
   width: 220px;
-  margin: 0 auto;
-  `;
+  display: flex;
+  flex-direction: row;
+  margin: 10px auto;
+  padding: 10px;
+`;
   
-  export const FreeBoardTab = styled.button`
+export const FreeBoardTab = styled.button`
   box-shadow: 0 0 2px rgb(200, 200, 200);
   border-radius: 25px;
   font-family: 'Pretendard-SemiBold';
-  font-size: 17px;
+  font-size: 18px;
   padding: 8px 10px;
   margin: 10px auto;
+  &:hover {
+    font-family: 'Pretendard-Bold';
+    background-color: rgb(255, 235, 130, 0.5);
+    }
   & a {
     cursor: pointer;
     padding: 0 2px;
     text-decoration: none;
-    &:hover {
-      font-family: 'Pretendard-Bold';
-      }
     }
 `;
       
 export const BookBoardTab = styled.button`
-  box-shadow: 0 0 1px rgb(200, 200, 200);
+  box-shadow: 0 0 2px rgb(200, 200, 200);
   border-radius: 25px;
   font-family: 'Pretendard-SemiBold';
-  font-size: 17px;
+  font-size: 18px;
   padding: 8px 10px;
-  margin: 10px;
-  margin-bottom: 18px;
-    & a {
+  margin: 10px auto;
+  &:hover {
+    font-family: 'Pretendard-Bold';
+    background-color: rgb(255, 235, 130, 0.5);
+    }
+  & a {
     cursor: pointer;
     padding: 0 2px;
     text-decoration: none;
-    &:hover {
-      font-family: 'Pretendard-Bold';
     }
 `;
 
 export const TitleWrapper = styled.div`
   margin: 25px auto;
   padding: 10px;
+  width: 850px;
 `;
 
 export const TextTitle = styled.h1`
@@ -71,8 +69,17 @@ export const TextTitle = styled.h1`
   text-align: center;
 `;
 
+export const BoardWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 30px;
+  padding-top: 0px;
+  width: 850px;
+`;
+
 export const BoardBox = styled.div`
-  width: 100%;
+  width: 850px;
   margin: 0 auto;
   font-family: 'Pretendard-SemiBold';
 `;
@@ -109,9 +116,6 @@ export const ThDate = styled.th`
 `;
 
 export const Tbody = styled.tbody`
-  &:hover {
-    cursor: pointer;
-  }
 `;
 
 export const TdNum = styled.td`
@@ -121,9 +125,13 @@ export const TdNum = styled.td`
 `;
 
 export const TdTitle = styled.td`
-  text-align: center;
-  padding: 15px;
-  width: 600px;
+text-align: center;
+padding: 15px;
+width: 600px;
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(200, 200, 200, 0.1);
+  }
 `;
 
 export const TdDate = styled.td`
@@ -135,6 +143,8 @@ export const ButtonWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  margin: 10px auto;
+  padding: 10px;
 `;
   
 export const Button = styled.button`
@@ -142,7 +152,8 @@ export const Button = styled.button`
   font-family: 'Pretendard-SemiBold';
   padding: 10px 15px;
   margin: 6px;
-  margin-right: 70px;
-  border-radius: 30px;
-  background-color: rgb(255, 235, 130, 0.5)
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: rgb(255, 235, 130, 0.5);
+  border: 0.5px solid rgb(100, 100, 100, 0.2);
 `;

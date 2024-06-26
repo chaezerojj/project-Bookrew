@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { SERVER_URL } from '../../constants';
 import Loading from '../Loading/Loading';
+import * as S from './BoardDetail.Style';
 
 function FreeBoardDetail() {
   const { id } = useParams();
@@ -30,12 +31,48 @@ function FreeBoardDetail() {
   }
 
   return (
-    <>
-      <div>
-        <h2>{board.title}</h2>
-        <p>{board.content}</p>
-      </div>
-    </>
+    <S.Board>
+      <S.Wrapper>
+
+        <S.ButtonWrapper>
+          <Link to={'/bookrew/bookboard'}>
+            <S.Button>
+              게시판으로 돌아가기
+            </S.Button>
+          </Link>
+        </S.ButtonWrapper>
+
+        <S.BoardNameWrapper>
+          <S.BoardName>
+            💬 자유 게시판 💬
+          </S.BoardName>
+        </S.BoardNameWrapper>
+
+        <S.BoardDetail>
+          <S.DetailWrapper>
+            <S.TitleWrapper>
+              <S.Top>
+                <S.IdText>
+                  번호
+                </S.IdText>
+                <S.IdData>
+                  {board.id}
+                </S.IdData>
+                <S.TitleText>
+                  제목
+                </S.TitleText>
+                <S.TitleData>{board.title}</S.TitleData>
+              </S.Top>
+            </S.TitleWrapper>
+            
+            <S.ContentWrapper>
+              <S.ContentText>{board.content}</S.ContentText>
+            </S.ContentWrapper>
+          </S.DetailWrapper>
+        </S.BoardDetail>
+
+      </S.Wrapper>
+    </S.Board>
   )
 }
 

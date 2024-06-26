@@ -33,11 +33,15 @@
   font-style: normal;
   font-display: swap;
 }
+html {
+  background-color: rgb(255, 252, 245);
+}
 
 body {
   font-family: 'Pretendard-Regular', 'Pretendard-Medium', 'Pretendard-SemiBold', 'Pretendard-Bold';
   margin: 0 auto;
   padding: 30px;
+  padding-top: 0px;
 }
 
 a {

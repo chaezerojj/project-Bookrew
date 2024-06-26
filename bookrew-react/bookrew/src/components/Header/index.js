@@ -2,18 +2,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import * as S from './index.Style';
+import logoImage from '../../assets/images/logo.png'; // 이미지 파일 경로
 
 export default function Index() {
-
   return (
     <S.Header>
       <S.Wrapper>
         <S.Logo>
-          <Link to="/">LOGO</Link>
+          <Link to="/">
+            <S.LogoImg src={logoImage} alt="Logo" />
+          </Link>
         </S.Logo>
         <S.Nav>
           <S.Booklist>
-            <Link to = "/bookrew/booklist">책 목록</Link>
+            <Link to="/bookrew/booklist">책 목록</Link>
           </S.Booklist>
           <S.Board>
             <Link to="bookrew/bookboard">Board</Link>
@@ -21,5 +23,5 @@ export default function Index() {
         </S.Nav>
       </S.Wrapper>
     </S.Header>
-  )
+  );
 }
