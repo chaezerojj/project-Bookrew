@@ -1,13 +1,13 @@
 import React from 'react';
 import BookCard from '../../components/Booklist/BookCard';
+import * as S from './Booklist.Style';
 
 function Booklist() {
 
   return (
-    <div>
-      <h2>Booklist</h2>
+    <S.BookCard>
         <BookCard />
-    </div>
+    </S.BookCard>
   )
 }
 

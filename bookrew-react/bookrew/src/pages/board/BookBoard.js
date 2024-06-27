@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { SERVER_URL } from '../../constants';
-import BoardForm from '../../components/Board/BookBoardForm';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import * as S from './Board.Style';
 
 function BookBoard() {
   const navigate = useNavigate();
   const [boards, setBoards] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,6 +29,25 @@ function BookBoard() {
   const handleRowClick = (e) => {
     const id = e.currentTarget.getAttribute('data-id');
     navigate(`/bookrew/bookboard/${id}`);
+  };
+
+  // 사용자 로그인 상태를 체크하는 함수
+  useEffect(() => {
+    // 여기서 사용자 로그인 여부를 체크할 수 있는 로직을 추가해야 함
+    // 예를 들어, 로컬 스토리지나 쿠키 등에서 토큰을 확인하여 사용자가 로그인 상태인지 판단할 수 있음
+    // 간단한 예시로 isLoggedIn을 사용하여 구현
+    setIsLoggedIn(!!localStorage.getItem('token')); // 예시: 토큰이 있으면 로그인 상태로 간주
+  }, []);
+
+  // 글쓰기 버튼 클릭 시 이벤트 핸들러
+  const handleWriteButtonClick = () => {
+    if (!isLoggedIn) {
+      // 로그인 페이지로 리다이렉트
+      navigate('/login');
+    } else {
+      // 글쓰기 페이지로 이동
+      navigate('/bookrew/bookboard/create');
+    }
   };
 
   return (
@@ -57,7 +76,7 @@ function BookBoard() {
           <S.BoardBox> {/* BoardBox */}
             <S.ButtonWrapper>
               <Link to="/bookrew/bookboard/create">
-                <S.Button>
+                <S.Button onClick={handleWriteButtonClick}>
                   📝글쓰기
                 </S.Button>
               </Link>
@@ -67,7 +86,7 @@ function BookBoard() {
                 <tr>
                   <S.ThNum>No.</S.ThNum>
                   <S.ThTitle>제목</S.ThTitle>
-                  <S.ThDate>작성일자</S.ThDate>
+                  <S.ThUserId>작성자</S.ThUserId>
                 </tr>
               </S.Thead>
               <S.Tbody>
@@ -75,7 +94,7 @@ function BookBoard() {
                   <tr key={board.id} data-id={board.id} onClick={handleRowClick}>
                     <S.TdNum>{board.id}</S.TdNum>
                     <S.TdTitle>{board.title}</S.TdTitle>
-                    <S.TdDate>{board.date}</S.TdDate>
+                    <S.ThUserId>{board.userId}</S.ThUserId>
                   </tr>
                 ))}
               </S.Tbody>

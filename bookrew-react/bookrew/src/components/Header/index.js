@@ -18,9 +18,17 @@ export default function Index() {
             <Link to="/bookrew/booklist">책 목록</Link>
           </S.Booklist>
           <S.Board>
-            <Link to="bookrew/bookboard">Board</Link>
+            <Link to="/bookrew/bookboard">Board</Link>
           </S.Board>
         </S.Nav>
+        <S.UserNav>
+          <S.Login>
+            <Link to="/bookrew/login">로그인</Link>
+          </S.Login>
+          <S.Join>
+            <Link to="bookrew/signup">회원가입</Link>
+          </S.Join>
+        </S.UserNav>
       </S.Wrapper>
     </S.Header>
   );

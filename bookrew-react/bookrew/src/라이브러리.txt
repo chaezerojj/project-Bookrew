@@ -1,5 +1,6 @@
 - 리액트 라우터
 npm install react-router-dom
+npm install react-router-dom@5
 
 - mui
 npm install @mui/icons-material @mui/material @emotion/styled @emotion/react

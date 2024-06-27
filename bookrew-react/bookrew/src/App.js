@@ -12,6 +12,8 @@ import FreeBoardDetail from './components/Board/FreeBoardDetail';
 import BookBoardDetail from './components/Board/BookBoardDetail';
 import FreeBoardForm from './components/Board/FreeBoardForm';
 import BookBoardForm from './components/Board/BookBoardForm';
+import LoginForm from './components/Login/LoginForm';
+import SignUpForm from './components/SignUp/SignUpForm';
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
           <Route path="/bookrew/bookboard/:id" element={<BookBoardDetail />} />
           <Route path="/bookrew/freeboard/create" element={<FreeBoardForm />} />
           <Route path="/bookrew/bookboard/create" element={<BookBoardForm />} />
+          <Route path="/bookrew/login" element={<LoginForm/>}/>
+          <Route path="/bookrew/signup" element={<SignUpForm />}/>
         </Routes>
         <Footer />
       </Router>

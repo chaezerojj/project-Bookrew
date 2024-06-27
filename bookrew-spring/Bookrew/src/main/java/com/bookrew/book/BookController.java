@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -53,5 +54,23 @@ public class BookController {
 		return book.map(ResponseEntity::ok) // book 존재하면 '200 ok' 응답 생성
 					.orElse(ResponseEntity.notFound().build()); // book 객체 비어있으면 404
 	}
+	
+	// 책 내용 수정
+	@PutMapping(value = "/{id}")
+    public ResponseEntity<Book> updateBook(@PathVariable Long id, @RequestBody Book updatedBook) {
+        Optional<Book> optionalBook = bookService.getBookById(id);
+        if (optionalBook.isPresent()) {
+            Book book = optionalBook.get();
+            book.setTitle(updatedBook.getTitle());
+            book.setAuthor(updatedBook.getAuthor());
+            book.setPublisher(updatedBook.getPublisher());
+            book.setCategory(updatedBook.getCategory());
+            // 필요한 다른 필드 업데이트
+            Book savedBook = bookService.saveBook(book);
+            return ResponseEntity.ok(savedBook);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 	
 }

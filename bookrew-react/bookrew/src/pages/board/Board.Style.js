@@ -5,7 +5,6 @@ export const Board = styled.div`
   padding: 40px;
   margin: 40px;
   `;
-  
 
 export const Tab = styled.div`
   margin: 0 auto;
@@ -109,7 +108,7 @@ export const ThTitle = styled.th`
   padding: 15px;
   width: 600px;
 `;
-export const ThDate = styled.th`
+export const ThUserId = styled.th`
   text-align: center;
   padding: 15px;
   width: 100px;

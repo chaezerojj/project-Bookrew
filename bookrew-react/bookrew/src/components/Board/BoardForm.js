@@ -4,7 +4,6 @@ import { SERVER_URL } from '../../constants';
 import { useNavigate } from 'react-router-dom';
 import * as S from './BoardForm.Style';
 import MenuItem from '@mui/material/MenuItem';
-import { FormControl, Select } from '@mui/material';
 
 function BoardForm({ defaultBoardType }) {
   const navigate = useNavigate();
@@ -30,6 +29,7 @@ function BoardForm({ defaultBoardType }) {
       console.error("Error creating Board: ", error);
     }
   };
+
 
   return (
     <S.BoardForm>

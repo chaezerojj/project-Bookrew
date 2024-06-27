@@ -9,12 +9,12 @@ export const Header = styled.header`
   padding: 0;
   text-align: justify;
   color: black;
-  background-color: rgb(255, 252, 245);
   height: 5rem;
   z-index: 1000;
-  `;
+`;
   
-  export const Wrapper = styled.div`
+export const Wrapper = styled.div`
+  background-color: rgb(255, 252, 245);
   border-bottom: 0.5px solid rgb(10, 10, 10, 0.1);
   display: flex;
   align-item:: center;
@@ -69,3 +69,29 @@ export const Booklist = styled.div`
 export const Board = styled.div`
   font-size: 20px;
 `;
+
+export const UserNav = styled.div`
+  font-family: 'Pretendard-SemiBold';
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  padding: 20px;
+  margin-left: 250px;
+  & a {
+    cursor: pointer;
+    border-radius: 2rem;
+    padding: 0 1rem;
+    color: rgb(70, 70, 70);
+    text-decoration: none;
+    font-weight: 500;
+    &:hover {
+      font-family: 'Pretendard-Bold';
+      color: rgb(0, 0, 0);
+    }
+  }
+`;
+
+export const Login = styled.div``;
+export const Join = styled.div``;

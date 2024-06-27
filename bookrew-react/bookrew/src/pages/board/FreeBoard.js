@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { SERVER_URL } from '../../constants';
-import BookBoardForm from '../../components/Board/BookBoardForm';
 import { Link, useNavigate } from 'react-router-dom';
 import * as S from './Board.Style';
 
@@ -68,7 +67,7 @@ function FreeBoard() {
                 <tr>
                   <S.ThNum>No.</S.ThNum>
                   <S.ThTitle>제목</S.ThTitle>
-                  <S.ThDate>작성일자</S.ThDate>
+                  <S.ThUserId>작성일자</S.ThUserId>
                 </tr>
               </S.Thead>
               <S.Tbody>
@@ -76,7 +75,7 @@ function FreeBoard() {
                   <tr key={board.id} data-id={board.id} onClick={handleRowClick}>
                     <S.TdNum>{board.id}</S.TdNum>
                     <S.TdTitle>{board.title}</S.TdTitle>
-                    <S.TdDate>{board.date}</S.TdDate>
+                    <S.ThUserId>{board.userId}</S.ThUserId>
                   </tr>
                 ))}
               </S.Tbody>

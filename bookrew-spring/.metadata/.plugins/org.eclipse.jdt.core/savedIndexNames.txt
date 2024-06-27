@@ -3,6 +3,7 @@ INDEX VERSION 1.134+D:\dev\bookrew\bookrew-spring\.metadata\.plugins\org.eclipse
 1983213364.index
 940556318.index
 2785515889.index
+3924944166.index
 4267381333.index
 2079700680.index
 3418474328.index
@@ -63,6 +64,7 @@ INDEX VERSION 1.134+D:\dev\bookrew\bookrew-spring\.metadata\.plugins\org.eclipse
 2615115862.index
 3348354041.index
 1669045387.index
+1536833999.index
 2088641888.index
 627019556.index
 2900693403.index
@@ -74,12 +76,15 @@ INDEX VERSION 1.134+D:\dev\bookrew\bookrew-spring\.metadata\.plugins\org.eclipse
 3827691556.index
 3457139653.index
 4092307196.index
+36709730.index
 1252361629.index
 4107544071.index
 1913285186.index
+373597198.index
 3526182607.index
 2185648547.index
 3651037272.index
+2991585456.index
 1814676963.index
 980603623.index
 4239239606.index
@@ -90,6 +95,7 @@ INDEX VERSION 1.134+D:\dev\bookrew\bookrew-spring\.metadata\.plugins\org.eclipse
 3040785627.index
 2697123811.index
 994490338.index
+3328270085.index
 2105027080.index
 1705768616.index
 461488117.index

@@ -34,4 +34,20 @@ public class BookService {
 	public Optional<Book> getBookById(Long id) {
 		return bookRepository.findById(id);
 	}
+	
+	// 책 수정 업데이트
+    public Book updateBook(Long id, Book updatedBook) {
+        Optional<Book> optionalBook = bookRepository.findById(id);
+        if (optionalBook.isPresent()) {
+            Book book = optionalBook.get();
+            book.setTitle(updatedBook.getTitle());
+            book.setAuthor(updatedBook.getAuthor());
+            book.setPublisher(updatedBook.getPublisher());
+            book.setCategory(updatedBook.getCategory());
+            // 필요한 다른 필드 업데이트
+            return bookRepository.save(book);
+        } else {
+            throw new RuntimeException("Book not found with id: " + id);
+        }
+    }
 }
