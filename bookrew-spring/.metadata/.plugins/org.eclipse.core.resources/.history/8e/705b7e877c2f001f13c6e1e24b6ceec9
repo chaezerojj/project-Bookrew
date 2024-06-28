@@ -1,5 +1,0 @@
-package com.bookrew.board;
-
-public interface BoardRepository {
-
-}

@@ -4,7 +4,6 @@ export const Board = styled.div`
   width: 100%;
   padding: 40px;
   margin: 40px;
-  // border: 1px solid red;
 `;
 
 export const Wrapper = styled.div`

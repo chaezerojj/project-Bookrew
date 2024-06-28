@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { SERVER_URL } from '../../constants';
 import Loading from '../Loading/Loading';
 import * as S from './BoardDetail.Style';
@@ -10,29 +10,32 @@ function BookBoardDetail() {
   const [isEditing, setIsEditing] = useState(false);
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchBoard = async () => {
       try {
         const response = await fetch(SERVER_URL + `/api/bookrew/bookboard/${id}`);
         if (!response.ok) {
-          throw new Error(`Http error!! Status: ${response.status}`)
+          throw new Error(`Http error!! Status: ${response.status}`);
         }
         const data = await response.json();
         setBoard(data);
         setTitle(data.title);
         setContent(data.content);
       } catch (error) {
-        console.error("Error fetching data, ", error)
+        console.error("Error fetching data, ", error);
       }
     };
     fetchBoard();
   }, [id]);
 
+  // 게시물 수정  
   const handleEditClick = () => {
     setIsEditing(true);
   };
 
+  // 게시물 저장
   const handleSaveClick = async () => {
     try {
       const response = await fetch(SERVER_URL + `/api/bookrew/bookboard/${id}`, {
@@ -53,6 +56,26 @@ function BookBoardDetail() {
     }
   };
 
+  // 게시물 삭제
+  const handleDeleteClick = async () => {
+    if (window.confirm("게시물을 삭제하시겠습니까?")) {
+      try {
+        const response = await fetch(SERVER_URL + `/api/bookrew/bookboard/${id}`, {
+          method: 'DELETE',
+        });
+        if (!response.ok) {
+          throw new Error(`Http error!! Status: ${response.status}`);
+        }
+        alert("게시물이 삭제되었습니다.");
+        navigate('/bookrew/bookboard');
+      } catch (error) {
+        console.error("Error deleting data, ", error);
+        alert("게시물 삭제 중 오류가 발생했습니다.");
+      }
+    }
+  };
+
+  // 로딩
   if (!board) {
     return <><Loading /></>;
   }
@@ -112,15 +135,14 @@ function BookBoardDetail() {
           </S.DetailWrapper>
         </S.BoardDetail>
 
-        {isEditing ? (
-          <S.ButtonWrapper>
+        <S.ButtonWrapper>
+          {isEditing ? (
             <S.Button onClick={handleSaveClick}>저장</S.Button>
-          </S.ButtonWrapper>
-        ) : (
-          <S.ButtonWrapper>
+          ) : (
             <S.Button onClick={handleEditClick}>수정</S.Button>
-          </S.ButtonWrapper>
-        )}
+          )}
+          <S.Button onClick={handleDeleteClick}>삭제</S.Button>
+        </S.ButtonWrapper>
       </S.Wrapper>
     </S.Board>
   );

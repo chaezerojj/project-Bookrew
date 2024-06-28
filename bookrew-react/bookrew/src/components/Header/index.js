@@ -15,7 +15,7 @@ export default function Index() {
         </S.Logo>
         <S.Nav>
           <S.Booklist>
-            <Link to="/bookrew/booklist">책 목록</Link>
+            <Link to="/bookrew/booklist">BookList</Link>
           </S.Booklist>
           <S.Board>
             <Link to="/bookrew/bookboard">Board</Link>

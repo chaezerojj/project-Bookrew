@@ -61,12 +61,21 @@ public class UserController {
     // 로그인
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody User user) {
+        logger.info("로그인 시도: {}", user.getUserId());
         User existingUser = userService.findByUserId(user.getUserId());
-        if (existingUser != null && bCryptPasswordEncoder.matches(user.getPassword(), existingUser.getPassword())) {
-            // Generated JWT Token
-            String token = "dummy-jwt-token"; // replace with real token generation
-            return ResponseEntity.ok(token);
+        if (existingUser != null) {
+            logger.info("사용자 찾음: {}", existingUser.getUserId());
+            if (bCryptPasswordEncoder.matches(user.getPassword(), existingUser.getPassword())) {
+                logger.info("비밀번호 일치: {}", user.getUserId());
+                String token = "dummy-jwt-token";
+                return ResponseEntity.ok(token);
+            } else {
+                logger.warn("비밀번호 불일치: {}", user.getUserId());
+            }
+        } else {
+            logger.warn("사용자 없음: {}", user.getUserId());
         }
         return ResponseEntity.status(401).body("Invalid credentials");
     }
+
 }

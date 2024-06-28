@@ -38,9 +38,9 @@ public class SecurityConfig {
             .requestMatchers("/api/auth/login", "/api/auth/signup").permitAll()
             .requestMatchers("/api/bookrew/booklist/**", "/api/bookrew/bookboard/**",
             		 "/api/bookrew/freeboard/**").permitAll() // 로그인 페이지와 특정 public URL은 모두 접근 허용
-            .requestMatchers(HttpMethod.POST, "/api/bookrew/bookboard/**", "/api/bookrew/freeboard/**", "/api/bookrew/booklist/**").hasRole("USER") // POST 요청 (작성)은 USER 권한을 요구
-            .requestMatchers(HttpMethod.PUT, "/api/bookrew/bookboard/**", "/api/bookrew/freeboard/**", "/api/bookrew/booklist/**").hasRole("USER") // PUT 요청 (수정)은 USER 권한을 요구
-            .requestMatchers(HttpMethod.DELETE, "/api/bookrew/bookboard/**", "/api/bookrew/freeboard/**", "/api/bookrew/booklist/**").hasRole("USER") // DELETE 요청 (삭제)은 USER 권한을 요구
+//            .requestMatchers(HttpMethod.POST, "/api/bookrew/bookboard/**", "/api/bookrew/freeboard/**", "/api/bookrew/booklist/**").hasRole("USER") // POST 요청 (작성)은 USER 권한을 요구
+//            .requestMatchers(HttpMethod.PUT, "/api/bookrew/bookboard/**", "/api/bookrew/freeboard/**", "/api/bookrew/booklist/**").hasRole("USER") // PUT 요청 (수정)은 USER 권한을 요구
+//            .requestMatchers(HttpMethod.DELETE, "/api/bookrew/bookboard/**", "/api/bookrew/freeboard/**", "/api/bookrew/booklist/**").hasRole("USER") // DELETE 요청 (삭제)은 USER 권한을 요구
             .anyRequest().authenticated() // 그 외 모든 요청에 대해 인증된 사용자만 접근 허용
             .and()
             .formLogin()
